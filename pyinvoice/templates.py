@@ -188,7 +188,7 @@ class SimpleInvoice(SimpleDocTemplate):
                 continue
 
             #unitprice = item.unit_price - (item.unit_price*self._item_tax_rate)
-            amount = item.unit_exVATprice * float(item.units)
+            amount = item.unit_exVATprice * item.units
             item_data.append(
                 (
                     item.name,

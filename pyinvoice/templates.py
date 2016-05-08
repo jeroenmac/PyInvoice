@@ -187,7 +187,7 @@ class SimpleInvoice(SimpleDocTemplate):
             if not isinstance(item, Item):
                 continue
 
-            unitprice = item.unit_price - (item.unit_price*self._item_tax_rate)
+            #unitprice = item.unit_price - (item.unit_price*self._item_tax_rate)
             item_data.append(
                 (
                     item.name,

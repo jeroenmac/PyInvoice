@@ -38,6 +38,7 @@ class TestSimpleInvoice(unittest.TestCase):
         doc.add_item(Item('Item', 'Item desc', 1, '1.1'))
         doc.add_item(Item('Item', 'Item desc', 2, '2.2'))
         doc.add_item(Item('Item', 'Item desc', 3, '3.3'))
+        doc.add_item(Item())
 
         items = doc.items
         self.assertEqual(len(items), 3)
@@ -72,9 +73,9 @@ class TestSimpleInvoice(unittest.TestCase):
         self.assertEqual(style, [])
 
         # Add items
-        invoice.add_item(Item('Item1', 'Item desc', 1, 1.1))
-        invoice.add_item(Item('Item2', 'Item desc', 2, u'2.2'))
-        invoice.add_item(Item(u'Item3', 'Item desc', 3, '3.3'))
+        invoice.add_item(Item('Item1', 'Item desc', 1, 1.21,1,0.21))
+        #invoice.add_item(Item('Item2', 'Item desc', 2, u'2.2'))
+        #invoice.add_item(Item(u'Item3', 'Item desc', 3, '3.3'))
 
         # After add items
         items = invoice.items

@@ -188,15 +188,13 @@ class SimpleInvoice(SimpleDocTemplate):
                 continue
 
             #unitprice = item.unit_price - (item.unit_price*self._item_tax_rate)
-
-            amount = item.unit_exVATprice * item.units
             item_data.append(
                 (
                     item.name,
                     Paragraph(item.description, self._defined_styles.get('TableParagraph')),
                     item.units,
                     item.unit_exVATprice,
-                    amount
+                    item.unit_exVATprice
                 )
             )
             item_subtotal += item.unit_exVATprice
